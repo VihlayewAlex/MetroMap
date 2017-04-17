@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3A532F2F1EA3D01000E14274 /* UIImageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A532F2E1EA3D01000E14274 /* UIImageTextField.swift */; };
+		3A532F311EA4A14B00E14274 /* BottomRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A532F301EA4A14B00E14274 /* BottomRouteView.xib */; };
+		3A532F331EA4C74700E14274 /* BottomRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A532F321EA4C74700E14274 /* BottomRouteView.swift */; };
 		3AD616AB1EA39028009A6FC8 /* MetroStationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD616AA1EA39028009A6FC8 /* MetroStationAnnotation.swift */; };
 		3AF03D271E9CDE20009A6F0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF03D261E9CDE20009A6F0E /* AppDelegate.swift */; };
 		3AF03D291E9CDE20009A6F0E /* MainMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF03D281E9CDE20009A6F0E /* MainMapVC.swift */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		3A532F2E1EA3D01000E14274 /* UIImageTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageTextField.swift; sourceTree = "<group>"; };
+		3A532F301EA4A14B00E14274 /* BottomRouteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomRouteView.xib; sourceTree = "<group>"; };
+		3A532F321EA4C74700E14274 /* BottomRouteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomRouteView.swift; sourceTree = "<group>"; };
 		3AD616AA1EA39028009A6FC8 /* MetroStationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroStationAnnotation.swift; sourceTree = "<group>"; };
 		3AF03D231E9CDE20009A6F0E /* MetroMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF03D261E9CDE20009A6F0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,8 +82,6 @@
 				3AF03D2F1E9CDE20009A6F0E /* LaunchScreen.storyboard */,
 				3AF03D321E9CDE20009A6F0E /* Info.plist */,
 				3AF03D441E9D39F4009A6F0E /* Kyiv.json */,
-				3AD616AA1EA39028009A6FC8 /* MetroStationAnnotation.swift */,
-				3A532F2E1EA3D01000E14274 /* UIImageTextField.swift */,
 			);
 			path = MetroMap;
 			sourceTree = "<group>";
@@ -106,6 +108,10 @@
 			isa = PBXGroup;
 			children = (
 				3AF03D2A1E9CDE20009A6F0E /* Main.storyboard */,
+				3A532F2E1EA3D01000E14274 /* UIImageTextField.swift */,
+				3AD616AA1EA39028009A6FC8 /* MetroStationAnnotation.swift */,
+				3A532F301EA4A14B00E14274 /* BottomRouteView.xib */,
+				3A532F321EA4C74700E14274 /* BottomRouteView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 			files = (
 				3AF03D311E9CDE20009A6F0E /* LaunchScreen.storyboard in Resources */,
 				3AF03D2E1E9CDE20009A6F0E /* Assets.xcassets in Resources */,
+				3A532F311EA4A14B00E14274 /* BottomRouteView.xib in Resources */,
 				3AF03D2C1E9CDE20009A6F0E /* Main.storyboard in Resources */,
 				3AF03D451E9D39F4009A6F0E /* Kyiv.json in Resources */,
 			);
@@ -204,6 +211,7 @@
 				3AF03D271E9CDE20009A6F0E /* AppDelegate.swift in Sources */,
 				3AF03D431E9D33B4009A6F0E /* MetroData.swift in Sources */,
 				3AD616AB1EA39028009A6FC8 /* MetroStationAnnotation.swift in Sources */,
+				3A532F331EA4C74700E14274 /* BottomRouteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

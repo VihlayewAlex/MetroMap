@@ -14,6 +14,7 @@ class MainMapVC: UIViewController {
     
     let metroDataManager = MetroDataManager.shared
     var mapView: MKMapView!
+    var bottomRouteView: BottomRouteView!
     
     
     override func viewDidLoad() {
@@ -23,6 +24,13 @@ class MainMapVC: UIViewController {
         mapView = MKMapView(frame: UIScreen.main.bounds)
         mapView.delegate = self
         self.view.addSubview(mapView)
+        
+        // Prepare bottom route view
+        bottomRouteView = Bundle.main.loadNibNamed("BottomRouteView", owner: self, options: nil)?.first as! BottomRouteView
+        bottomRouteView.frame = CGRect(x: 0, y: view.frame.height - bottomRouteView.frame.height + 50, width: view.frame.width, height: bottomRouteView.frame.height)
+        bottomRouteView.startStationField.delegate = self
+        bottomRouteView.endStationField.delegate = self
+        self.view.addSubview(bottomRouteView)
         
         self.centerMapOn(location: metroDataManager.metroData!.stations.first!.location)
         // FINAL
@@ -92,6 +100,28 @@ extension MainMapVC: MKMapViewDelegate {
         pinView?.pinTintColor = colorPointAnnotation.pinColor
         
         return pinView
+    }
+    
+}
+
+
+extension MainMapVC: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.bottomRouteView.frame.origin.y -= 216
+        })
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.bottomRouteView.frame.origin.y += 216
+        })
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }

@@ -17,4 +17,10 @@ class MetroData {
         self.stations.append(station)
     }
     
+    func getWay(from firstStationIndex: Int, to secondStationIndex: Int) -> [Int]? {
+        
+        return nil
+        
+    }
+    
 }
