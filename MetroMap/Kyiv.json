@@ -1,5 +1,5 @@
 {"city":"Kyiv", "data": [
- {"color":"green", "stations": [
+ {"lineName":"green", "stations": [
   {"index":15, "connections": [14], "name": "Syrets", "latitude": 50.476213, "longtitude": 30.430677},
   {"index":14, "connections": [13,15], "name": "Dorohozhychi", "latitude": 50.473120, "longtitude": 30.452253},
   {"index":13, "connections": [12,14], "name": "Lukianivska", "latitude": 50.461183, "longtitude": 30.483699},
@@ -17,8 +17,8 @@
   {"index":1, "connections": [0,2], "name": "Boryspilska", "latitude": 50.403387, "longtitude": 30.684186},
   {"index":0, "connections": [1], "name": "Chervonyi khutir", "latitude": 50.409500, "longtitude": 30.696181}]},
  
- {"color":"blue", "stations": [
-  {"index":33, "connections": [32,34], "name": "Heroiv Dnipra", "latitude": 50.522735, "longtitude": 30.498963},
+ {"lineName":"blue", "stations": [
+  {"index":33, "connections": [32], "name": "Heroiv Dnipra", "latitude": 50.522735, "longtitude": 30.498963},
   {"index":32, "connections": [31,33], "name": "Minska", "latitude": 50.512240, "longtitude": 30.498550},
   {"index":31, "connections": [30,32], "name": "Obolon", "latitude": 50.501466, "longtitude": 30.498217},
   {"index":30, "connections": [29,31], "name": "Petrivka", "latitude": 50.486078, "longtitude": 30.497847},
@@ -37,7 +37,7 @@
   {"index":17, "connections": [16,18], "name": "Ipodrom", "latitude": 50.376672, "longtitude": 30.469000},
   {"index":16, "connections": [17], "name": "Teremky", "latitude": 50.367174, "longtitude": 30.454398}]},
  
- {"color":"red", "stations": [
+ {"lineName":"red", "stations": [
   {"index":51, "connections": [50], "name": "Lisova", "latitude": 50.464777, "longtitude": 30.645612},
   {"index":50, "connections": [49,51], "name": "Chernihivska", "latitude": 50.459912, "longtitude": 30.630387},
   {"index":49, "connections": [48,50], "name": "Darnytsia", "latitude": 50.455741, "longtitude": 30.611905},

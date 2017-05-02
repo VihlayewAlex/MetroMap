@@ -15,7 +15,7 @@ class MetroDataManager {
     private init() { }
     
     // Properties
-    lazy var metroData: MetroData? = {
+    var metroData: MetroData? {
         var data: MetroData?
         
         // Reading file
@@ -37,8 +37,31 @@ class MetroDataManager {
         }
             
         return data
-    }()
-    
+    }
+
+    var linesNames: [String]? {
+        var names = [String]()
+        if let stations = metroData?.stations {
+            for station in stations {
+                let currentName = station.lineName
+                if !names.contains(currentName) {
+                    names.append(currentName)
+                }
+            }
+            return names
+        } else {
+            return nil
+        }
+    }
+
+    func stationsCountForLine(withName name: String) -> Int? {
+        if let station = metroData?.stations {
+            let neededStations = station.filter{ $0.lineName == name }
+            return neededStations.count
+        } else {
+            return nil
+        }
+    }
     
 }
 
@@ -55,7 +78,7 @@ extension MetroDataManager {
             let metroData = cityData["data"] as! [Dictionary<String, Any>]
             
             for lineData in metroData {
-                let color = lineData["color"] as! String
+                let lineName = lineData["lineName"] as! String
                 let stations = lineData["stations"] as! [Dictionary<String, Any>]
                 
                 for station in stations {
@@ -66,7 +89,7 @@ extension MetroDataManager {
                     let longtitude = station["longtitude"] as! Double
                     
                     newCityData.cityName = city
-                    newCityData.add(station: MetroStation_Vertex_(withName: name, withColor: color, forIndex: index, connectedTo: connections, loacatedAt: (latitude,longtitude)))
+                    newCityData.add(station: MetroStation_Vertex_(withName: name, withLineName: lineName, forIndex: index, connectedTo: connections, loacatedAt: (latitude,longtitude)))
                 }
             }
         }

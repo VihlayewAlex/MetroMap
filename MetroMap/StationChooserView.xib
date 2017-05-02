@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StationChooserView" customModule="MetroMap" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="qRt-40-C81" id="eF5-6Z-dsq"/>
+                <outlet property="tableView" destination="7aT-54-bLR" id="Yu3-iZ-gjp"/>
+                <outlet property="view" destination="iN0-l3-epB" id="EYx-yQ-2OY"/>
+                <outlet property="view2" destination="UgK-pH-VIx" id="Iht-0u-uLK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgK-pH-VIx">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
+                    <subviews>
+                        <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Type station name" translatesAutoresizingMaskIntoConstraints="NO" id="qRt-40-C81">
+                            <rect key="frame" x="0.0" y="47" width="320" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="QMN-JU-GVd"/>
+                            </constraints>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose station" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZR-C7-Qqi">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="47" id="mky-aP-hMB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8f-3l-wM4">
+                            <rect key="frame" x="243" y="0.0" width="77" height="47"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="77" id="bqd-W3-QUa"/>
+                                <constraint firstAttribute="height" constant="47" id="fvn-bC-ndc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <state key="normal" title="Done"/>
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="-1" eventType="touchUpInside" id="efU-Ie-igU"/>
+                            </connections>
+                        </button>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7aT-54-bLR">
+                            <rect key="frame" x="0.0" y="91" width="320" height="249"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="7aT-54-bLR" secondAttribute="bottom" id="Dal-m2-0me"/>
+                        <constraint firstAttribute="trailing" secondItem="7aT-54-bLR" secondAttribute="trailing" id="GV4-b9-Isz"/>
+                        <constraint firstItem="RZR-C7-Qqi" firstAttribute="top" secondItem="UgK-pH-VIx" secondAttribute="top" id="HgE-9x-3Du"/>
+                        <constraint firstItem="7aT-54-bLR" firstAttribute="leading" secondItem="UgK-pH-VIx" secondAttribute="leading" id="Hlv-AD-NNz"/>
+                        <constraint firstItem="RZR-C7-Qqi" firstAttribute="leading" secondItem="UgK-pH-VIx" secondAttribute="leading" id="Pf0-NP-XBv"/>
+                        <constraint firstItem="qRt-40-C81" firstAttribute="leading" secondItem="UgK-pH-VIx" secondAttribute="leading" id="UlV-DP-Qf2"/>
+                        <constraint firstItem="qRt-40-C81" firstAttribute="top" secondItem="RZR-C7-Qqi" secondAttribute="bottom" id="YJS-JE-R7D"/>
+                        <constraint firstItem="e8f-3l-wM4" firstAttribute="top" secondItem="UgK-pH-VIx" secondAttribute="top" id="cQ8-Dc-QC9"/>
+                        <constraint firstAttribute="trailing" secondItem="e8f-3l-wM4" secondAttribute="trailing" id="dIz-Ub-QOY"/>
+                        <constraint firstAttribute="trailing" secondItem="qRt-40-C81" secondAttribute="trailing" id="hnQ-LO-wum"/>
+                        <constraint firstAttribute="trailing" secondItem="RZR-C7-Qqi" secondAttribute="trailing" id="nLp-Ub-tEr"/>
+                        <constraint firstItem="7aT-54-bLR" firstAttribute="top" secondItem="qRt-40-C81" secondAttribute="bottom" id="sp7-u3-mhB"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="UgK-pH-VIx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6Yf-yS-Yde"/>
+                <constraint firstAttribute="trailing" secondItem="UgK-pH-VIx" secondAttribute="trailing" id="bKM-Cc-R9i"/>
+                <constraint firstAttribute="bottom" secondItem="UgK-pH-VIx" secondAttribute="bottom" id="mCU-SM-Qqw"/>
+                <constraint firstItem="UgK-pH-VIx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oz8-2e-diJ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="23" y="275"/>
+        </view>
+    </objects>
+</document>
