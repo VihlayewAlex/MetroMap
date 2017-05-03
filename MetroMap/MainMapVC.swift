@@ -18,6 +18,8 @@ class MainMapVC: UIViewController {
     // Stations
     var startStation: MetroStation_Vertex_?
     var endStation: MetroStation_Vertex_?
+    // Current route
+    var currentPolyline: MKPolyline?
 
 
     // Lifecycle
@@ -60,6 +62,19 @@ extension MainMapVC: MKMapViewDelegate {
             self.addPinFor(station: station)
         }
     }
+
+    func draw(way: [MetroStation_Vertex_]) {
+        if let polyline = currentPolyline {
+            mapView.remove(polyline)
+        }
+        var coordinates = [CLLocationCoordinate2D]()
+        for station in way {
+            coordinates.append(station.location.coordinate)
+        }
+        let wayPolyline = MKPolyline(coordinates: coordinates, count: coordinates.count)
+        currentPolyline = wayPolyline
+        mapView.add(wayPolyline)
+    }
     
     func centerMapOn(location: CLLocation) {
         let regionRadius: CLLocationDistance = 5000
@@ -79,7 +94,6 @@ extension MainMapVC: MKMapViewDelegate {
         if annotation is MKUserLocation {
             return nil
         }
-        
         let reuseId = "pin"
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
         let colorPointAnnotation = annotation as! MetroStationAnnotation
@@ -90,10 +104,22 @@ extension MainMapVC: MKMapViewDelegate {
         return pinView
     }
 
+    func mapView(_ mapView: MKMapView, viewForOverlay overlay: Any) -> MKPolylineRenderer {
+        // create a polylineView using polyline overlay object
+        let polylineView = MKPolylineRenderer(polyline: overlay as! MKPolyline)
+        // Custom polylineView
+        polylineView.strokeColor = UIColor.orange
+        polylineView.lineWidth = 5.0
+        polylineView.alpha = 8.0
+        return polylineView
+    }
+
     func calculateWay(from start: MetroStation_Vertex_, to end: MetroStation_Vertex_) {
         if let way = MetroDataManager.shared.metroData?.getWay(from: start, to: end, visited: [], way: []) {
             let finalWay = [start] + way + [end]
             print(finalWay.map({ $0.stationName }))
+            // Drawing
+            draw(way: finalWay)
         } else { print("Shit happens") }
     }
     
