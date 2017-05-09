@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A532F2F1EA3D01000E14274 /* UIImageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A532F2E1EA3D01000E14274 /* UIImageTextField.swift */; };
+		3A226F631EB5FC6200CB3122 /* StationChooserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A226F621EB5FC6200CB3122 /* StationChooserView.swift */; };
+		3A226F651EB5FC8300CB3122 /* StationChooserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A226F641EB5FC8300CB3122 /* StationChooserView.xib */; };
+		3A226F691EB668D800CB3122 /* CGFrame+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A226F681EB668D800CB3122 /* CGFrame+Extensions.swift */; };
 		3A532F311EA4A14B00E14274 /* BottomRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A532F301EA4A14B00E14274 /* BottomRouteView.xib */; };
 		3A532F331EA4C74700E14274 /* BottomRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A532F321EA4C74700E14274 /* BottomRouteView.swift */; };
 		3AD616AB1EA39028009A6FC8 /* MetroStationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD616AA1EA39028009A6FC8 /* MetroStationAnnotation.swift */; };
@@ -24,7 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A532F2E1EA3D01000E14274 /* UIImageTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageTextField.swift; sourceTree = "<group>"; };
+		3A226F621EB5FC6200CB3122 /* StationChooserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationChooserView.swift; sourceTree = "<group>"; };
+		3A226F641EB5FC8300CB3122 /* StationChooserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationChooserView.xib; sourceTree = "<group>"; };
+		3A226F681EB668D800CB3122 /* CGFrame+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFrame+Extensions.swift"; sourceTree = "<group>"; };
 		3A532F301EA4A14B00E14274 /* BottomRouteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomRouteView.xib; sourceTree = "<group>"; };
 		3A532F321EA4C74700E14274 /* BottomRouteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomRouteView.swift; sourceTree = "<group>"; };
 		3AD616AA1EA39028009A6FC8 /* MetroStationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroStationAnnotation.swift; sourceTree = "<group>"; };
@@ -54,6 +58,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A226F611EB5FC3300CB3122 /* BootomRouteView */ = {
+			isa = PBXGroup;
+			children = (
+				3A532F301EA4A14B00E14274 /* BottomRouteView.xib */,
+				3A532F321EA4C74700E14274 /* BottomRouteView.swift */,
+			);
+			name = BootomRouteView;
+			sourceTree = "<group>";
+		};
+		3A226F661EB5FCC700CB3122 /* StationChooserView */ = {
+			isa = PBXGroup;
+			children = (
+				3A226F621EB5FC6200CB3122 /* StationChooserView.swift */,
+				3A226F641EB5FC8300CB3122 /* StationChooserView.xib */,
+			);
+			name = StationChooserView;
+			sourceTree = "<group>";
+		};
+		3A226F671EB668AC00CB3122 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A226F681EB668D800CB3122 /* CGFrame+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		3AF03D1A1E9CDE1F009A6F0E = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +104,7 @@
 		3AF03D251E9CDE20009A6F0E /* MetroMap */ = {
 			isa = PBXGroup;
 			children = (
+				3A226F671EB668AC00CB3122 /* Extensions */,
 				3AF03D261E9CDE20009A6F0E /* AppDelegate.swift */,
 				3AF03D3B1E9D29B7009A6F0E /* Model */,
 				3AF03D3C1E9D29BE009A6F0E /* View */,
@@ -108,10 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				3AF03D2A1E9CDE20009A6F0E /* Main.storyboard */,
-				3A532F2E1EA3D01000E14274 /* UIImageTextField.swift */,
 				3AD616AA1EA39028009A6FC8 /* MetroStationAnnotation.swift */,
-				3A532F301EA4A14B00E14274 /* BottomRouteView.xib */,
-				3A532F321EA4C74700E14274 /* BottomRouteView.swift */,
+				3A226F611EB5FC3300CB3122 /* BootomRouteView */,
+				3A226F661EB5FCC700CB3122 /* StationChooserView */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -194,6 +224,7 @@
 				3A532F311EA4A14B00E14274 /* BottomRouteView.xib in Resources */,
 				3AF03D2C1E9CDE20009A6F0E /* Main.storyboard in Resources */,
 				3AF03D451E9D39F4009A6F0E /* Kyiv.json in Resources */,
+				3A226F651EB5FC8300CB3122 /* StationChooserView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,8 +237,9 @@
 			files = (
 				3AF03D3F1E9D2B66009A6F0E /* MetroDataManager.swift in Sources */,
 				3AF03D411E9D2C1F009A6F0E /* MetroStation(Vertex).swift in Sources */,
-				3A532F2F1EA3D01000E14274 /* UIImageTextField.swift in Sources */,
 				3AF03D291E9CDE20009A6F0E /* MainMapVC.swift in Sources */,
+				3A226F691EB668D800CB3122 /* CGFrame+Extensions.swift in Sources */,
+				3A226F631EB5FC6200CB3122 /* StationChooserView.swift in Sources */,
 				3AF03D271E9CDE20009A6F0E /* AppDelegate.swift in Sources */,
 				3AF03D431E9D33B4009A6F0E /* MetroData.swift in Sources */,
 				3AD616AB1EA39028009A6FC8 /* MetroStationAnnotation.swift in Sources */,
@@ -342,6 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vihlayew.MetroMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -355,6 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vihlayew.MetroMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

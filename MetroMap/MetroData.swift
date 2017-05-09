@@ -18,17 +18,17 @@ class MetroData {
     }
 
     var ways = [[MetroStation_Vertex_]]()
-    var visitedStations = Set<MetroStation_Vertex_>()
     func getWay(from firstStation: MetroStation_Vertex_, to secondStation: MetroStation_Vertex_, visited: Set<MetroStation_Vertex_>, way: [MetroStation_Vertex_]) -> [MetroStation_Vertex_]? {
+
+        var visitedStations = visited
 
         if firstStation == secondStation {
             return []
         }
 
         // Clearing visited stations set on first run
-        if visited.isEmpty {
+        if visitedStations.isEmpty {
             ways.removeAll()
-            visitedStations.removeAll()
         }
         // Adding current source
         visitedStations.insert(firstStation)
@@ -46,6 +46,7 @@ class MetroData {
         }
 
         if ways.count == 0 { return nil }
+        print(ways.map({ $0.map({ $0.stationName }) }))
         return ways.sorted(by: { $0.count < $1.count }).first
     }
 
