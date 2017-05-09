@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MetroStation_Vertex_: Hashable {
+class MetroStation_Vertex_: NSObject {
     // Vertex info
     let stationIndex: Int
     let connectedMetroStationsIndexes_Vertices_: [Int]
@@ -18,7 +18,7 @@ class MetroStation_Vertex_: Hashable {
     let location: CLLocation
     let lineName: String
     // Hash
-    var hashValue: Int {
+    override var hashValue: Int {
         return stationIndex
     }
 

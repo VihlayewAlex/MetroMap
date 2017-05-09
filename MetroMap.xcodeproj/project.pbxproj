@@ -12,6 +12,7 @@
 		3A226F691EB668D800CB3122 /* CGFrame+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A226F681EB668D800CB3122 /* CGFrame+Extensions.swift */; };
 		3A532F311EA4A14B00E14274 /* BottomRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A532F301EA4A14B00E14274 /* BottomRouteView.xib */; };
 		3A532F331EA4C74700E14274 /* BottomRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A532F321EA4C74700E14274 /* BottomRouteView.swift */; };
+		3A6D06611EC1C4C200CBB07C /* DetailedWayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D06601EC1C4C200CBB07C /* DetailedWayController.m */; };
 		3AD616AB1EA39028009A6FC8 /* MetroStationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD616AA1EA39028009A6FC8 /* MetroStationAnnotation.swift */; };
 		3AF03D271E9CDE20009A6F0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF03D261E9CDE20009A6F0E /* AppDelegate.swift */; };
 		3AF03D291E9CDE20009A6F0E /* MainMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF03D281E9CDE20009A6F0E /* MainMapVC.swift */; };
@@ -31,6 +32,9 @@
 		3A226F681EB668D800CB3122 /* CGFrame+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFrame+Extensions.swift"; sourceTree = "<group>"; };
 		3A532F301EA4A14B00E14274 /* BottomRouteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomRouteView.xib; sourceTree = "<group>"; };
 		3A532F321EA4C74700E14274 /* BottomRouteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomRouteView.swift; sourceTree = "<group>"; };
+		3A6D065E1EC1C4C100CBB07C /* MetroMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetroMap-Bridging-Header.h"; sourceTree = "<group>"; };
+		3A6D065F1EC1C4C200CBB07C /* DetailedWayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedWayController.h; sourceTree = "<group>"; };
+		3A6D06601EC1C4C200CBB07C /* DetailedWayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedWayController.m; sourceTree = "<group>"; };
 		3AD616AA1EA39028009A6FC8 /* MetroStationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroStationAnnotation.swift; sourceTree = "<group>"; };
 		3AF03D231E9CDE20009A6F0E /* MetroMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF03D261E9CDE20009A6F0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,15 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		3A6D06621EC1C4EF00CBB07C /* DetailedWayController */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D065F1EC1C4C200CBB07C /* DetailedWayController.h */,
+				3A6D06601EC1C4C200CBB07C /* DetailedWayController.m */,
+			);
+			name = DetailedWayController;
+			sourceTree = "<group>";
+		};
 		3AF03D1A1E9CDE1F009A6F0E = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +122,7 @@
 				3AF03D3B1E9D29B7009A6F0E /* Model */,
 				3AF03D3C1E9D29BE009A6F0E /* View */,
 				3AF03D3D1E9D29CE009A6F0E /* Controller */,
+				3A6D065E1EC1C4C100CBB07C /* MetroMap-Bridging-Header.h */,
 				3AF03D2D1E9CDE20009A6F0E /* Assets.xcassets */,
 				3AF03D2F1E9CDE20009A6F0E /* LaunchScreen.storyboard */,
 				3AF03D321E9CDE20009A6F0E /* Info.plist */,
@@ -150,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				3AF03D281E9CDE20009A6F0E /* MainMapVC.swift */,
+				3A6D06621EC1C4EF00CBB07C /* DetailedWayController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -187,6 +202,7 @@
 					3AF03D221E9CDE20009A6F0E = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 22U234HGU8;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -242,6 +258,7 @@
 				3A226F631EB5FC6200CB3122 /* StationChooserView.swift in Sources */,
 				3AF03D271E9CDE20009A6F0E /* AppDelegate.swift in Sources */,
 				3AF03D431E9D33B4009A6F0E /* MetroData.swift in Sources */,
+				3A6D06611EC1C4C200CBB07C /* DetailedWayController.m in Sources */,
 				3AD616AB1EA39028009A6FC8 /* MetroStationAnnotation.swift in Sources */,
 				3A532F331EA4C74700E14274 /* BottomRouteView.swift in Sources */,
 			);
@@ -368,11 +385,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 22U234HGU8;
 				INFOPLIST_FILE = MetroMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vihlayew.MetroMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MetroMap/MetroMap-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -382,11 +402,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 22U234HGU8;
 				INFOPLIST_FILE = MetroMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vihlayew.MetroMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MetroMap/MetroMap-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

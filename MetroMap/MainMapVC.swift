@@ -11,10 +11,12 @@ import MapKit
 
 class MainMapVC: UIViewController {
 
-    // Properties
+// MARK: - Properties
+
     let metroDataManager = MetroDataManager.shared
     var mapView: MKMapView!
     var bottomRouteView: BottomRouteView!
+    var detailedWayButton: UIButton!
     // Stations
     var startStation: MetroStation_Vertex_?
     var endStation: MetroStation_Vertex_?
@@ -22,7 +24,7 @@ class MainMapVC: UIViewController {
     var currentPolyline: MKPolyline?
 
 
-    // Lifecycle
+// MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,17 +38,59 @@ class MainMapVC: UIViewController {
         bottomRouteView = Bundle.main.loadNibNamed("BottomRouteView", owner: self, options: nil)?.first as! BottomRouteView
         bottomRouteView.frame = CGRect(x: 0, y: view.frame.height - bottomRouteView.frame.height + 50, width: view.frame.width, height: bottomRouteView.frame.height)
         bottomRouteView.delegate = self
-        
         self.view.addSubview(bottomRouteView)
-        
+
+        // Prepare detailed way button
+        detailedWayButton = UIButton(frame: CGRect(origin: CGPoint(x: 5, y: 25), size: CGSize(width: 50, height: 50)))
+        detailedWayButton.backgroundColor = UIColor.white
+        detailedWayButton.setImage(UIImage(named: "arrows"), for: .normal)
+        detailedWayButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        detailedWayButton.layer.cornerRadius = detailedWayButton.frame.height / 2
+        detailedWayButton.layer.shadowPath = UIBezierPath(rect: detailedWayButton.bounds).cgPath
+        detailedWayButton.layer.shadowColor = UIColor.black.cgColor
+        detailedWayButton.layer.shadowRadius = 10
+        detailedWayButton.layer.shadowOpacity = 0.15
+        detailedWayButton.layer.shadowOffset = CGSize.zero
+        detailedWayButton.addTarget(self, action: #selector(showDetailedWay), for: .touchUpInside)
+        self.view.addSubview(detailedWayButton)
+
+        // Center map
         self.centerMapOn(location: metroDataManager.metroData!.stations.first!.location)
-        
+
+        // Drawing stations
         drawStations()
     }
-    
-    
 
 
+    func showDetailedWay() {
+
+        if let start = startStation, let end = endStation {
+            if start != end {
+                performSegue(withIdentifier: "detailedWaySegue", sender: self)
+            } else {
+                let alert = UIAlertController(title: "Select diferent stations", message: "Start and destination stations can`t be same", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+            }
+        } else {
+            let alert = UIAlertController(title: "Select both stations", message: "Both start and destination stations must be selected", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailedWaySegue" {
+            let navigationController = segue.destination as! UINavigationController
+            let destinationVC = navigationController.viewControllers.first as! DetailedWayController
+            if let way = MetroDataManager.shared.metroData?.getWay(from: startStation!, to: endStation!, visited: [], way: []) {
+                let finalWay = [startStation!] + way + [endStation!]
+                // Setting way
+                destinationVC.way = finalWay
+            } else { print("Shit happens") }
+        }
+    }
 
 
 }
