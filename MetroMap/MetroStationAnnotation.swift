@@ -12,6 +12,7 @@ import MapKit
 class MetroStationAnnotation: MKPointAnnotation {
 
     var pinColor: UIColor
+    var pinColorName: String?
     
     init(pinColor: UIColor) {
         self.pinColor = pinColor
@@ -19,6 +20,7 @@ class MetroStationAnnotation: MKPointAnnotation {
     }
     
     init(pinColorString: String) {
+        pinColorName = pinColorString
         switch pinColorString {
         case "green":
             self.pinColor = UIColor.green

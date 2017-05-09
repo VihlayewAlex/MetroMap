@@ -59,6 +59,11 @@ class MainMapVC: UIViewController {
 
         // Drawing stations
         drawStations()
+        // Drawing lines
+        for lineName in metroDataManager.linesNames! {
+            let lineStations = metroDataManager.metroData?.stations.filter({ $0.lineName == lineName })
+            drawLine(withStations: lineStations!)
+        }
     }
 
 
@@ -119,6 +124,16 @@ extension MainMapVC: MKMapViewDelegate {
         currentPolyline = wayPolyline
         mapView.add(wayPolyline)
     }
+
+    func drawLine(withStations stations: [MetroStation_Vertex_]) {
+        var coordinates = [CLLocationCoordinate2D]()
+        for station in stations {
+            coordinates.append(station.location.coordinate)
+        }
+        let linePolyline = MKPolyline(coordinates: coordinates, count: coordinates.count)
+        linePolyline.title = stations.first?.lineName
+        mapView.add(linePolyline)
+    }
     
     func centerMapOn(location: CLLocation) {
         let regionRadius: CLLocationDistance = 5000
@@ -139,22 +154,50 @@ extension MainMapVC: MKMapViewDelegate {
             return nil
         }
         let reuseId = "pin"
-        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
         let colorPointAnnotation = annotation as! MetroStationAnnotation
-        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+        pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
         pinView?.canShowCallout = true
-        pinView?.pinTintColor = colorPointAnnotation.pinColor
+        // Setting image
+        let pinImage = UIImage(forStationWithLineName: colorPointAnnotation.pinColorName!)
+        let size = CGSize(width: 12, height: 12)
+        UIGraphicsBeginImageContext(size)
+        pinImage.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        pinView?.image = resizedImage
         
         return pinView
     }
 
     func mapView(_ mapView: MKMapView, viewForOverlay overlay: Any) -> MKPolylineRenderer {
         // create a polylineView using polyline overlay object
-        let polylineView = MKPolylineRenderer(polyline: overlay as! MKPolyline)
+        let polyline = overlay as! MKPolyline
+        let polylineView = MKPolylineRenderer(polyline: polyline)
         // Custom polylineView
-        polylineView.strokeColor = UIColor.orange
-        polylineView.lineWidth = 5.0
-        polylineView.alpha = 8.0
+        if let lineTitle = polyline.title {
+            switch lineTitle {
+            case "green":
+                polylineView.strokeColor = UIColor.green
+                polylineView.lineWidth = 5.0
+                polylineView.alpha = 8.0
+            case "blue":
+                polylineView.strokeColor = UIColor.blue
+                polylineView.lineWidth = 5.0
+                polylineView.alpha = 8.0
+            case "red":
+                polylineView.strokeColor = UIColor.red
+                polylineView.lineWidth = 5.0
+                polylineView.alpha = 8.0
+            default:
+                break
+            }
+        } else {
+            polylineView.strokeColor = UIColor.black
+            polylineView.lineWidth = 8.0
+            polylineView.alpha = 8.0
+        }
+
         return polylineView
     }
 

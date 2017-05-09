@@ -14,4 +14,8 @@ extension UIImage {
         self.init(named: name + "dot")!
     }
 
+    convenience init(forStationWithLineName name: String) {
+        self.init(named: name)!
+    }
+
 }
