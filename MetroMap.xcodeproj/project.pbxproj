@@ -13,6 +13,7 @@
 		3A532F311EA4A14B00E14274 /* BottomRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A532F301EA4A14B00E14274 /* BottomRouteView.xib */; };
 		3A532F331EA4C74700E14274 /* BottomRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A532F321EA4C74700E14274 /* BottomRouteView.swift */; };
 		3A6D06611EC1C4C200CBB07C /* DetailedWayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D06601EC1C4C200CBB07C /* DetailedWayController.m */; };
+		3A6D06641EC1DADB00CBB07C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D06631EC1DADB00CBB07C /* UIImage+Extensions.swift */; };
 		3AD616AB1EA39028009A6FC8 /* MetroStationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD616AA1EA39028009A6FC8 /* MetroStationAnnotation.swift */; };
 		3AF03D271E9CDE20009A6F0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF03D261E9CDE20009A6F0E /* AppDelegate.swift */; };
 		3AF03D291E9CDE20009A6F0E /* MainMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF03D281E9CDE20009A6F0E /* MainMapVC.swift */; };
@@ -35,6 +36,7 @@
 		3A6D065E1EC1C4C100CBB07C /* MetroMap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetroMap-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A6D065F1EC1C4C200CBB07C /* DetailedWayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedWayController.h; sourceTree = "<group>"; };
 		3A6D06601EC1C4C200CBB07C /* DetailedWayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedWayController.m; sourceTree = "<group>"; };
+		3A6D06631EC1DADB00CBB07C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		3AD616AA1EA39028009A6FC8 /* MetroStationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroStationAnnotation.swift; sourceTree = "<group>"; };
 		3AF03D231E9CDE20009A6F0E /* MetroMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF03D261E9CDE20009A6F0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				3A226F681EB668D800CB3122 /* CGFrame+Extensions.swift */,
+				3A6D06631EC1DADB00CBB07C /* UIImage+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				3AF03D411E9D2C1F009A6F0E /* MetroStation(Vertex).swift in Sources */,
 				3AF03D291E9CDE20009A6F0E /* MainMapVC.swift in Sources */,
 				3A226F691EB668D800CB3122 /* CGFrame+Extensions.swift in Sources */,
+				3A6D06641EC1DADB00CBB07C /* UIImage+Extensions.swift in Sources */,
 				3A226F631EB5FC6200CB3122 /* StationChooserView.swift in Sources */,
 				3AF03D271E9CDE20009A6F0E /* AppDelegate.swift in Sources */,
 				3AF03D431E9D33B4009A6F0E /* MetroData.swift in Sources */,

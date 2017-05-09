@@ -49,7 +49,8 @@
 
     MetroStation_Vertex_* currentStation = [_way objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[currentStation stationName]];
-    
+    [[cell imageView] setImage:[[UIImage alloc] initWithLineName:[currentStation lineName]]];
+
     return cell;
 }
 

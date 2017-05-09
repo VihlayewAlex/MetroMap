@@ -144,6 +144,7 @@ extension StationChooserView: UITableViewDelegate, UITableViewDataSource {
             stations = stations?.filter({ $0.stationName.contains(keyword) })
         }
         cell.textLabel?.text = stations?[indexPath.row].stationName
+        cell.imageView?.image = UIImage(withLineName: (stations?[indexPath.row].lineName)!)
         if indexPath.row == choosedStationIndex {
             cell.accessoryType = .checkmark
         } else {
